@@ -6,12 +6,10 @@ spring:
     name: config-server
   profiles:
     active:
-    - true
-    include:
     - github
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/iortizf/akkihazlo/tree/master/config-repository
+          uri: https://github.com/iortizf/akkihazlo-config
           
