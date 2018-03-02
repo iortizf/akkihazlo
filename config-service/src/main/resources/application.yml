@@ -1,15 +1,25 @@
 server:
   port: 8888
-  
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: DEBUG
+    com.atsistemas: DEBUG
 spring:
   application:
     name: config-server
   profiles:
     active:
-    - github
+    - native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/iortizf/akkihazlo-config
-          
+        native:
+          search-locations:
+          - file:///E:/Desarrollos/ws_akkihazlo/akkihazlo/config-repository
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-server
+    name: user-admin-service
   cloud:
     config:
       fail-fast: true
