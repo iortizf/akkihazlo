@@ -11,13 +11,13 @@ spring:
     name: config-server
   profiles:
     active:
-    - native
+    - github
   cloud:
     config:
       server:
-        native:
-          search-locations:
-          - file:///E:/Desarrollos/ws_akkihazlo/akkihazlo/config-repository
+        git:
+          uri: https://github.com/iortizf/akkihazlo-config
+          
 # Discovery Server Access
 eureka:
   client:
