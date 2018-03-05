@@ -1,4 +1,4 @@
-package mx.com.akkihazlo.user.admin.app;
+package mx.com.akkihazlo.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients("mx.com.akkihazlo.user.admin.client")
-public class UserAdminServiceApplication {
+@EnableFeignClients("mx.com.akkihazlo.notification.client")
+public class NotificationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserAdminServiceApplication.class, args);
+		SpringApplication.run(NotificationApplication.class, args);
 	}
 }
