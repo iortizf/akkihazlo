@@ -11,6 +11,19 @@ spring:
     name: config-server
   profiles:
     active:
+    - native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - file:///E:/Desarrollos/ws_akkihazlo/akkihazlo-config
+---
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
     - github
   cloud:
     config:
