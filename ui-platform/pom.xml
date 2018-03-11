@@ -76,7 +76,7 @@
 
 				<configuration>
 					<nodeVersion>v8.9.0</nodeVersion>
-					<npmVersion>5.5.1</npmVersion>					
+					<npmVersion>5.5.1</npmVersion>
 					<workingDirectory>front-end</workingDirectory>
 				</configuration>
 
@@ -104,13 +104,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${build.directory}/classes/static/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../ui-platform/front-end/dist</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
-		<resources>
-			<resource>
-				<directory>target/ui-akkihazlo-platform</directory>
-				<targetPath>static</targetPath>
-			</resource>
-		</resources>
 	</build>
 
 	<repositories>

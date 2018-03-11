@@ -5,8 +5,7 @@
   "scripts": {
     "ng": "ng",
     "install": "npm run napa",
-    "start": "ng serve",
-    "build": "ng build --prod dist/META-INF/resources",
+    "build": "ng build --prod --output-path dist/META-INF/resources  --build-optimizer=false",
     "test": "ng test",
     "lint": "ng lint",
     "modernizr": "modernizr -c modernizr-config.json -d src/modernizr.js",
