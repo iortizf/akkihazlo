@@ -1,0 +1,32 @@
+server:
+  port: 8888  
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+    - native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - file:///E:/Desarrollos/ws_akkihazlo/akkihazlo-config
+---
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+    - github
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/iortizf/akkihazlo-config
+          
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
